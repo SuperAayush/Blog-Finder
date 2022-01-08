@@ -7,7 +7,7 @@ import "../styling/blogs.css";
 
 const Blogs = () => {
   const searchInput = useSelector(selectUserInput);
-  const blog_url = `https://gnews.io/api/v4/search?q=${searchInput}&token=3ffae8e8a3e98f185d1149fbc1e8cc95`;
+  const blog_url = `https://gnews.io/api/v4/search?q=${searchInput}&token=74da443369bd202a1f3146a275d761fc`;
   const dispatch = useDispatch();
   const [blogs, setBlogs] = useState();
 
@@ -32,8 +32,8 @@ const Blogs = () => {
       {loading ? <h1 className="loading">Loading...</h1> : ""}
       <div className="blogs">
         {blogs?.articles?.map((blog) => (
-          <a className="blog" target="_blank" href={blog.url} rel="noreferrer">
-            <img src={blog.image} alt=" " />
+          <a className="blog" target="_blank" href={blog.url}>
+            <img src={blog.image} />
             <div>
               <h3 className="sourceName">
                 <span>{blog.source.name}</span>
@@ -45,9 +45,9 @@ const Blogs = () => {
           </a>
         ))}
 
-        {blogs?.totalArticles === 0 && (
+        {blogs?.totalArticles == 0 && (
           <h1 className="no__blogs">
-            No blogs available. Search something else to read blogs on the
+            No blogs available 😞. Search something else to read blogs on the
             greatest platform.
           </h1>
         )}
