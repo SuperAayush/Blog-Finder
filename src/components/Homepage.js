@@ -23,10 +23,11 @@ const Homepage = () => {
     <div className="home__page" style={{ display: isSignedIn ? "none" : "" }}>
       {!isSignedIn ? (
         <div className="login__message">
-          <h2>📚</h2>
+          <h2>📗</h2>
           <h1>A Readers favourite place!</h1>
           <p>
-            Just hop in, find some interesting blogs and start reading.
+            We provide high quality online resource for reading blogs. Just sign
+            up and start reading some quality blogs.
           </p>
           <GoogleLogin
             clientId="310194042198-tikrtoba6deva5id5m2plj23kbfb7cch.apps.googleusercontent.com"
